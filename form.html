@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formularz architektoniczny</title>
+
+<style>
+
+/* Tło strony */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #0a0a0a, #111);
+    color: #f2c48b;
+}
+
+/* Logo */
+header {
+    text-align: center;
+    padding: 30px 10px 10px;
+}
+
+header img {
+    max-width: 250px;
+    filter: drop-shadow(0 0 10px rgba(242,196,139,0.3));
+}
+
+/* Kontener */
+form {
+    max-width: 850px;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.04);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+/* Sekcje */
+fieldset {
+    border: 1px solid rgba(242,196,139,0.4);
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 1.2em;
+    color: #f2c48b;
+}
+
+/* Etykiety */
+label {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Inputy */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: #fff;
+    transition: 0.2s;
+}
+
+/* Focus */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #f2c48b;
+    box-shadow: 0 0 5px #f2c48b;
+}
+
+/* Radio/checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+/* Linie między opcjami */
+.option-group {
+    margin-top: 10px;
+}
+
+/* Przyciski */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #f2c48b, #d9a96c);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #f2c48b;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo">
+</header>
+
+<form>
+
+<fieldset>
+<legend>Dane klienta</legend>
+
+<label>Nazwisko</label>
+<input type="text" required>
+
+<label>Imię</label>
+<input type="text" required>
+
+<label>Telefon</label>
+<input type="tel">
+
+<label>Email</label>
+<input type="email">
+</fieldset>
+
+<fieldset>
+<legend>Informacje o domu</legend>
+
+<label>Typ domu</label>
+<select>
+<option>Willa</option>
+<option>Dom jednorodzinny</option>
+<option>Bliźniak</option>
+<option>Szeregowiec</option>
+<option>Tiny house</option>
+<option>Dom modułowy</option>
+<option>Dom inteligentny</option>
+<option>Dom letniskowy</option>
+</select>
+
+<label>Styl</label>
+<div class="option-group">
+<input type="radio" name="arch">Nowoczesny<br>
+<input type="radio" name="arch">Tradycyjny<br>
+<input type="radio" name="arch">Rustykalny<br>
+<input type="radio" name="arch">Minimalistyczny<br>
+<input type="radio" name="arch">Industrialny<br>
+<input type="radio" name="arch">Skandynawski
+</div>
+
+<label>Powierzchnia (m²)</label>
+<input type="number">
+
+<label>Liczba pokoi</label>
+<input type="number">
+
+<label>Liczba łazienek</label>
+<input type="number">
+
+<label>Technologia</label>
+<div class="option-group">
+<input type="radio" name="k">Murowany<br>
+<input type="radio" name="k">Drewniany<br>
+<input type="radio" name="k">Prefabrykowany
+</div>
+
+<label>Układ</label>
+<div class="option-group">
+<input type="radio" name="u">Parterowy<br>
+<input type="radio" name="u">Piętrowy
+</div>
+
+<div class="option-group">
+<input type="checkbox">Poddasze<br>
+<input type="checkbox">Piwnica
+</div>
+
+<label>Ekologia</label>
+<div class="option-group">
+<input type="checkbox">Fotowoltaika<br>
+<input type="checkbox">Pompa ciepła<br>
+<input type="checkbox">Rekuperacja
+</div>
+
+<label>Udogodnienia</label>
+<div class="option-group">
+<input type="checkbox">Garaż<br>
+<input type="checkbox">Taras<br>
+<input type="checkbox">Basen<br>
+<input type="checkbox">Ogród
+</div>
+
+<label>Budżet</label>
+<input type="number">
+
+<label>Uwagi</label>
+<textarea rows="4"></textarea>
+
+</fieldset>
+
+<div class="buttons">
+<button type="submit">Wyślij</button>
+<button type="reset">Wyczyść</button>
+</div>
+
+</form>
+
+</body>
+</html>
